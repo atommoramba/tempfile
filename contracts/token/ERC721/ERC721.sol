@@ -318,7 +318,7 @@ abstract contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Er
      *
      * Emits a {Transfer} event.
      */
-    function _transfer(address from, address to, uint256 tokenId) internal {
+    function _transfer(address from, address to, uint256 tokenId) public virtual {
         if (to == address(0)) {
             revert ERC721InvalidReceiver(address(0));
         }
